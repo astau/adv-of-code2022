@@ -19,13 +19,10 @@ def main():
 
     # Part 2
     for i in range(len(signal)):
-        c = i % 40 
-        if c == 0:
+        if i % 40 == 0:
             print()
-        if c-1 <= signal[i] <= c+1:
-            print("#", end="")
-        else:
-            print(" ", end="") # instead of dot (.), space (" ") makes the answer clear
+        px = "#" if abs(signal[i]-(i % 40)) < 2 else "." # instead of dot (.), space (" ") makes the answer clear
+        print(px, end="")
     print()
     # Answer: PZGPKPEB
 
